@@ -44,20 +44,25 @@
                 <img class="logo__img" src="<?php echo carbon_get_theme_option('crb_logo_image'); ?>">
                 <span class="logo__text"><?php echo bloginfo('name'); ?></span>
             </a>
-            <ul class="main-menu" id="js-main-menu">
-                <li class="current-menu-item">
-                    <a href="about.html">About us</a>
-                </li>
-                <li>
-                    <a href="services.html">Services</a>
-                </li>
-                <li>
-                    <a href="price-list.html">Price list</a>
-                </li>
-                <li>
-                    <a href="contacts.html">Contacts</a>
-                </li>
-            </ul>
+            <?php wp_nav_menu( [
+            	'theme_location'  => '',
+            	'menu'            => '',
+            	'container'       => '',
+            	'container_class' => '',
+            	'container_id'    => '',
+            	'menu_class'      => 'main-menu',
+            	'menu_id'         => 'js-main-menu',
+            	'echo'            => true,
+            	'fallback_cb'     => 'wp_page_menu',
+            	'before'          => '',
+            	'after'           => '',
+            	'link_before'     => '',
+            	'link_after'      => '',
+            	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            	'depth'           => 0,
+            	'walker'          => '',
+            ] ); ?>
+
             <div class="wpglobus-lang">
                 <div class="list">
                     <a class="wpglobus-selector-link wpglobus-current-language" href="#"><img
