@@ -2,43 +2,51 @@
     <div class="container">
         <div class="modal-block-wrap wow fadeInRightBig">
             <div class="modal-block">
-                <div class="modal-block__text">Booking by phone or fill out the form:</div>
-                <a class="modal-block__phone" href="tel:37379505748">+ (373) 79 505 748</a>
-                <a class="btn btn--white" id="js-show-popup" href="#">Booking</a>
+				<?php
+				$phone       = carbon_get_theme_option( 'crb_phone' );
+				$phone_clear = clear_phone( $phone );
+				?>
+                <div class="modal-block__text"><?php echo carbon_get_theme_option( 'crb_form_title' . get_lang() ) ?>:
+                </div>
+                <a class="modal-block__phone" href="tel:<?php echo $phone_clear; ?>"><?php echo $phone; ?></a>
+                <a class="btn btn--white" id="js-show-popup"
+                   href="#"><?php echo carbon_get_theme_option( 'crb_form_btn' . get_lang() ); ?></a>
             </div>
         </div>
-        <ul class="main-footer__menu">
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Products</a>
-            </li>
-            <li>
-                <a href="#">Price list</a>
-            </li>
-            <li>
-                <a href="#">Contacts</a>
-            </li>
-        </ul>
+		<?php wp_nav_menu( [
+			'theme_location'  => '',
+			'menu'            => '',
+			'container'       => '',
+			'container_class' => '',
+			'container_id'    => '',
+			'menu_class'      => 'main-footer__menu',
+			'menu_id'         => '',
+			'echo'            => true,
+			'fallback_cb'     => 'wp_page_menu',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'depth'           => 0,
+			'walker'          => '',
+		] ); ?>
     </div>
 </footer>
-<div class="copyright">© 2019 Industry. All rights reserved.</div>
+<div class="copyright"><?php echo carbon_get_theme_option( 'crb_copyright' . get_lang() ); ?></div>
 <div class="overlay" id="js-overlay"></div>
 <div class="popup" id="js-popup">
     <div class="popup__content">
         <button class="popup__close" id="js-popup-close"></button>
         <header class="section__header">
-            <h2 class="section__title">Get in touch</h2>
+            <h2 class="section__title"><?php echo carbon_get_theme_option( 'crb_form_btn' . get_lang() ); ?></h2>
         </header>
         <div class="contacts-form">
-            <input type="text" name="name" placeholder="Name">
-            <div class="contacts-form__group">
-                <input type="email" name="name" placeholder="Email">
-                <input type="number" name="name" placeholder="Phone">
-            </div>
-            <textarea placeholder="Message"></textarea>
-            <input class="btn" type="submit" value="Send Message">
+            <?php if(get_lang() == '_ro'): ?>
+	            <?php echo do_shortcode('[contact-form-7 id="81" title="Form ro"]'); ?>
+            <?php else: ?>
+	            <?php echo do_shortcode( '[contact-form-7 id="80" title="Form ru"]' ); ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -56,3 +64,4 @@
 <?php wp_footer(); ?>
 </body>
 </html>
+

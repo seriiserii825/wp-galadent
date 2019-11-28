@@ -49,9 +49,34 @@ function crb_attach_theme_options()
 			Field::make('text', 'crb_read_more_ru', __('Read more ru'))
 			     ->set_width(50),
 
-			Field::make('text', 'crb_services_block_subtitle_ro', __('Read more ro'))
+			Field::make('text', 'crb_services_block_subtitle_ro', __('Block services ro'))
 			     ->set_width(50),
-			Field::make('text', 'crb_services_block_subtitle_ru', __('Read more ru'))
+			Field::make('text', 'crb_services_block_subtitle_ru', __('Block services ru'))
+			     ->set_width(50),
+
+			Field::make('text', 'crb_specialist_subtitle_ro', __('Block specialist subtitle ro'))
+			     ->set_width(50),
+			Field::make('text', 'crb_specialist_subtitle_ru', __('Block specialist subtitle ru'))
+			     ->set_width(50),
+
+			Field::make('text', 'crb_specialist_title_ro', __('Block specialist title ro'))
+			     ->set_width(50),
+			Field::make('text', 'crb_specialist_title_ru', __('Block specialist title ru'))
+			     ->set_width(50),
+
+			Field::make('text', 'crb_form_title_ro', __('Block form title ro'))
+			     ->set_width(50),
+			Field::make('text', 'crb_form_title_ru', __('Block form title ru'))
+			     ->set_width(50),
+
+			Field::make('text', 'crb_form_btn_ro', __('Block form btn ro'))
+			     ->set_width(50),
+			Field::make('text', 'crb_form_btn_ru', __('Block form btn ru'))
+			     ->set_width(50),
+
+			Field::make('text', 'crb_copyright_ro', __('Block copyright ro'))
+			     ->set_width(50),
+			Field::make('text', 'crb_copyright_ru', __('Block copyright ru'))
 			     ->set_width(50),
 		));
 

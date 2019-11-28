@@ -101,35 +101,32 @@
 <section class="section our-specialists">
     <div class="container">
         <header class="section__header">
-            <h3 class="section__subtitle">Our specialists</h3>
-            <h2 class="section__title">Our team of doctors</h2>
+            <h3 class="section__subtitle"><?php echo carbon_get_theme_option('crb_specialist_title'.get_lang()); ?></h3>
+            <h2 class="section__title"><?php echo carbon_get_theme_option('crb_specialist_subtitle'.get_lang()); ?></h2>
         </header>
         <div class="blocks__content blocks__content-4">
-            <div class="blocks__item wow fadeIn"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/our-specialists/1.jpg" alt="">
-                <div class="blocks__item-content">
-                    <div class="blocks__title">Anastasia Zubkova</div>
-                    <div class="blocks__colored">Orthodontics</div>
-                </div>
-            </div>
-            <div class="blocks__item wow fadeIn"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/our-specialists/2.jpg" alt="">
-                <div class="blocks__item-content">
-                    <div class="blocks__title">Serghey Dandist</div>
-                    <div class="blocks__colored">Dantist</div>
-                </div>
-            </div>
-            <div class="blocks__item wow fadeIn"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/our-specialists/3.jpg" alt="">
-                <div class="blocks__item-content">
-                    <div class="blocks__title">Oleg Pasta</div>
-                    <div class="blocks__colored">Surgeon</div>
-                </div>
-            </div>
-            <div class="blocks__item wow fadeIn"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/our-specialists/1.jpg" alt="">
-                <div class="blocks__item-content">
-                    <div class="blocks__title">Stanislav Karies</div>
-                    <div class="blocks__colored">Orthodontics</div>
-                </div>
-            </div>
+            <?php $specialists = new WP_Query([
+                'post_type' => 'specialist',
+                'posts_per_page' => -1
+            ]); ?>
+
+            <?php if($specialists->have_posts()): ?>
+            	<?php while($specialists->have_posts()): ?>
+            		<?php $specialists->the_post(); ?>
+                    <?php $profession =  get_the_terms(get_the_ID(),'profession')[0]->name;?>
+                    <div class="blocks__item wow fadeIn">
+                        <img src="<?php echo getThePostThumbSrc(280, 216) ?>" alt="">
+
+                        <div class="blocks__item-content">
+                            <a href="<?php the_permalink(); ?>" class="blocks__title"><?php the_title(); ?></a>
+                            <div class="blocks__colored"><?php echo $profession; ?></div>
+                        </div>
+                    </div>
+            	<?php endwhile; ?>
+            	<?php wp_reset_postdata(); ?>
+            <?php endif; ?>
         </div>
     </div>
 </section>
-<?php wp_footer(); ?>
+<?php get_footer(); ?>
+

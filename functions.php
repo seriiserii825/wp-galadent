@@ -9,6 +9,7 @@ require_once __DIR__.'/inc/bs-styles.php';
 require_once __DIR__.'/inc/bs-setup.php';
 require_once __DIR__.'/inc/bs-widgets.php';
 require_once __DIR__.'/inc/bs-post-type.php';
+require_once __DIR__.'/inc/bs-post-taxonomy.php';
 require_once __DIR__.'/inc/carbon-fields/cb-post-type.php';
 
 function bs_galadent_content_width() {
