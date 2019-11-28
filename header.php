@@ -11,20 +11,24 @@
 <header class="main-header">
     <div class="container">
         <div class="main-header__content">
-            <div class="phone"><img class="phone__img" src="<?php echo get_template_directory_uri(); ?>/assets/i/phone.svg" alt="">
-                <span><?php echo carbon_get_theme_option('crb_phone_translate'.get_lang()); ?>:</span>
-                <?php
-                    $phone = carbon_get_theme_option('crb_phone');
-                    $phone_clear = clear_phone($phone);
-                ?>
+            <div class="phone"><img class="phone__img"
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/i/phone.svg" alt="">
+                <span><?php echo carbon_get_theme_option('crb_phone_translate' . get_lang()); ?>:</span>
+				<?php
+				$phone = carbon_get_theme_option('crb_phone');
+				$phone_clear = clear_phone($phone);
+				?>
                 <a href="tel:<?php echo $phone_clear; ?>"><?php echo $phone; ?></a>
             </div>
             <div class="socials">
                 <img class="mail" src="<?php echo get_template_directory_uri(); ?>/assets/i/mail.svg">
-                <a class="socials__email" href="mailto:<?php echo carbon_get_theme_option('crb_mail'); ?>"><?php echo carbon_get_theme_option('crb_mail'); ?></a>
+                <a class="socials__email"
+                   href="mailto:<?php echo carbon_get_theme_option('crb_mail'); ?>"><?php echo carbon_get_theme_option('crb_mail'); ?></a>
                 <div class="socials__icons">
-                    <a href="<?php echo carbon_get_theme_option('crb_facebook'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/facebook.svg" alt=""></a>
-                    <a href="<?php echo carbon_get_theme_option('crb_twitter'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/twitter.svg" alt=""></a>
+                    <a href="<?php echo carbon_get_theme_option('crb_facebook'); ?>"><img
+                                src="<?php echo get_template_directory_uri(); ?>/assets/i/facebook.svg" alt=""></a>
+                    <a href="<?php echo carbon_get_theme_option('crb_twitter'); ?>"><img
+                                src="<?php echo get_template_directory_uri(); ?>/assets/i/twitter.svg" alt=""></a>
                 </div>
             </div>
         </div>
@@ -44,43 +48,29 @@
                 <img class="logo__img" src="<?php echo carbon_get_theme_option('crb_logo_image'); ?>">
                 <span class="logo__text"><?php echo bloginfo('name'); ?></span>
             </a>
-            <?php wp_nav_menu( [
-            	'theme_location'  => '',
-            	'menu'            => '',
-            	'container'       => '',
-            	'container_class' => '',
-            	'container_id'    => '',
-            	'menu_class'      => 'main-menu',
-            	'menu_id'         => 'js-main-menu',
-            	'echo'            => true,
-            	'fallback_cb'     => 'wp_page_menu',
-            	'before'          => '',
-            	'after'           => '',
-            	'link_before'     => '',
-            	'link_after'      => '',
-            	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-            	'depth'           => 0,
-            	'walker'          => '',
-            ] ); ?>
+			<?php wp_nav_menu([
+				'theme_location' => '',
+				'menu' => '',
+				'container' => '',
+				'container_class' => '',
+				'container_id' => '',
+				'menu_class' => 'main-menu',
+				'menu_id' => 'js-main-menu',
+				'echo' => true,
+				'fallback_cb' => 'wp_page_menu',
+				'before' => '',
+				'after' => '',
+				'link_before' => '',
+				'link_after' => '',
+				'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'depth' => 0,
+				'walker' => '',
+			]); ?>
 
             <div class="wpglobus-lang">
-                <div class="list">
-                    <a class="wpglobus-selector-link wpglobus-current-language" href="#"><img
-                                src="https://euconsult.md/wp-content/plugins/wpglobus/flags/ro.png" alt="">
-                        <span class="name">Rom&acirc;n&abreve;</span>
-                        <span class="code">RO</span>
-                    </a>
-                    <a class="wpglobus-selector-link" href="#"><img
-                                src="https://euconsult.md/wp-content/plugins/wpglobus/flags/ru.png" alt="">
-                        <span class="name">&Rcy;&ucy;&scy;&scy;&kcy;&icy;&jcy;</span>
-                        <span class="code">RU</span>
-                    </a>
-                    <a class="wpglobus-selector-link" href="#"><img
-                                src="https://euconsult.md/wp-content/plugins/wpglobus/flags/us.png" alt="">
-                        <span class="name">English</span>
-                        <span class="code">EN</span>
-                    </a>
-                </div>
+				<?php if (!dynamic_sidebar('language')): ?>
+                    <span style="color: red;">Language widget</span>
+				<?php endif; ?>
             </div>
         </div>
     </div>

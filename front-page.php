@@ -10,33 +10,24 @@
         <a class="slider__button slider__button--right" href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/arrow-right.svg" alt=""></a>
     </div>
     <div class="slider" id="js-slider">
-        <div class="slider__item">
-            <div class="slider__img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/slider/slide-1.jpg')"></div>
-            <div class="slider__content">
-                <h2 class="slider__title">For a Good ORAL HEALTH</h2>
-                <p class="slider__text">Dentist is your primary care dental provider.<br> This dentist diagnoses and
-                    treats.</p>
-                <a class="btn" href="#">Read more</a>
-            </div>
-        </div>
-        <div class="slider__item">
-            <div class="slider__img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/slider/slide-1.jpg')"></div>
-            <div class="slider__content">
-                <h2 class="slider__title">For a Good</h2>
-                <p class="slider__text">Dentist is your primary care dental provider.<br> This dentist diagnoses and
-                    treats.</p>
-                <a class="btn" href="#">Read more</a>
-            </div>
-        </div>
-        <div class="slider__item">
-            <div class="slider__img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/slider/slide-1.jpg')"></div>
-            <div class="slider__content">
-                <h2 class="slider__title">For HEALTH</h2>
-                <p class="slider__text">Dentist is your primary care dental provider.<br> This dentist diagnoses and
-                    treats.</p>
-                <a class="btn" href="#">Read more</a>
-            </div>
-        </div>
+        <?php $slider = new WP_Query([
+            'post_type' => 'slider',
+            'posts_per_page' => -1
+        ]); ?>
+
+        <?php if($slider->have_posts()): ?>
+        	<?php while($slider->have_posts()): ?>
+        		<?php $slider->the_post(); ?>
+                <div class="slider__item">
+                    <div class="slider__img" style="background-image: url('<?php echo getThePostThumbSrc(1920, 600) ?>')"></div>
+                    <div class="slider__content">
+                        <h2 class="slider__title"><?php the_title(); ?></h2>
+                        <p class="slider__text"><?php echo carbon_get_the_post_meta('crb_slider_text'.get_lang()); ?></p>
+                    </div>
+                </div>
+        	<?php endwhile; ?>
+        	<?php wp_reset_postdata(); ?>
+        <?php endif; ?>
     </div>
 </section>
 <section class="testimonials">

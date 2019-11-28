@@ -153,6 +153,10 @@ ul {
   list-style-type: none;
 }
 
+a:visited {
+  color: inherit;
+}
+
 p {
   margin: 0;
   padding: 0;
@@ -645,7 +649,7 @@ p {
 
 .slider__content {
   position: relative;
-  top: 180px;
+  top: 40%;
   margin: 0 auto;
   padding: 0 15px;
   max-width: 1210px;
@@ -1459,4 +1463,3 @@ table td {
   margin-bottom: 20px;
 }
 
-/*# sourceMappingURL=my.css.map */

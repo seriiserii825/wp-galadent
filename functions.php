@@ -8,6 +8,8 @@ require_once __DIR__.'/inc/func.php';
 require_once __DIR__.'/inc/bs-styles.php';
 require_once __DIR__.'/inc/bs-setup.php';
 require_once __DIR__.'/inc/bs-widgets.php';
+require_once __DIR__.'/inc/bs-post-type.php';
+require_once __DIR__.'/inc/carbon-fields/cb-post-type.php';
 
 function bs_galadent_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'bs_galadent_content_width', 640 );
