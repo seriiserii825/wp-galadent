@@ -33,52 +33,42 @@
 <section class="testimonials">
     <div class="container">
         <div class="testimonials__content">
-            <div class="testimonials__item">
-                <div class="testimonials__img"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/testimonials/1.svg" alt=""></div>
-                <h3 class="testimonials__title">Therapy</h3>
-                <p class="testimonials__text">The results are part of National Smile Month, a nationwide health campaign
-                    that promotes the benefits of a healthy smile.</p>
-            </div>
-            <div class="testimonials__item">
-                <div class="testimonials__img"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/testimonials/2.svg" alt=""></div>
-                <h3 class="testimonials__title">Orthodontics</h3>
-                <p class="testimonials__text">The results are part of National Smile Month, a nationwide health campaign
-                    that promotes the benefits of a healthy smile.</p>
-            </div>
-            <div class="testimonials__item">
-                <div class="testimonials__img"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/testimonials/3.svg" alt=""></div>
-                <h3 class="testimonials__title">Therapy</h3>
-                <p class="testimonials__text">The results are part of National Smile Month, a nationwide health campaign
-                    that promotes the benefits of a healthy smile.</p>
-            </div>
-            <div class="testimonials__item">
-                <div class="testimonials__img"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/testimonials/4.svg" alt=""></div>
-                <h3 class="testimonials__title">Surgery</h3>
-                <p class="testimonials__text">The results are part of National Smile Month, a nationwide health campaign
-                    that promotes the benefits of a healthy smile.</p>
-            </div>
+            <?php $testimonials = carbon_get_theme_option('crb_testimonials_fields'); ?>
+            <?php foreach($testimonials as $item): ?>
+                <div class="testimonials__item">
+                    <div class="testimonials__img"><img src="<?php echo $item['image'];?>" alt=""></div>
+                    <h3 class="testimonials__title"><?php echo $item['title'.get_lang()]; ?></h3>
+                    <p class="testimonials__text"><?php echo $item['text'.get_lang()]; ?></p>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
-<section class="single-post section">
-    <div class="container">
-        <div class="single-post__content wow slideInLeft">
-            <header class="section__header">
-                <div class="section__subtitle">Primary care dental</div>
-                <div class="section__title">Beautiful Natural Smiles</div>
-            </header>
-            <div class="single-post__text">
-                <p>A general dentist is your primary care dental provider. This dentist diagnoses, treats, and manages
-                    your overall oral health care needs, including gum care, root canals, fillings, crowns, veneers,
-                    bridges, and preventive education.</p>
-                <p>Promotes unrealistic expectations of what a healthy smile looks like and it is clearly having a
-                    negative effect</p>
+<?php $exclusive = new WP_Query([
+    'category_name' => 'exclusive',
+    'posts_per_page' => 1
+]); ?>
+<?php if($exclusive->have_posts()): ?>
+	<?php while($exclusive->have_posts()): ?>
+		<?php $exclusive->the_post(); ?>
+        <section class="single-post section">
+            <div class="container">
+                <div class="single-post__content wow slideInLeft">
+                    <header class="section__header">
+                        <div class="section__title"><?php the_title(); ?></div>
+                    </header>
+                    <div class="single-post__text">
+	                    <?php the_content(); ?>
+                    </div>
+                    <a href="<?php the_permalink(); ?>" class="btn"><?php echo carbon_get_theme_option('crb_read_more'.get_lang()); ?></a>
+                </div>
+                <img class="single-post__img wow slideInRight" src="<?php echo getThePostThumbSrc(580, 470); ?>">
             </div>
-            <a class="btn">Read more</a>
-        </div>
-        <img class="single-post__img wow slideInRight" src="<?php echo get_template_directory_uri(); ?>/assets/i/single-post-image.jpg">
-    </div>
-</section>
+        </section>
+	<?php endwhile; ?>
+	<?php wp_reset_postdata(); ?>
+<?php endif; ?>
+
 <section class="blocks-section section section--dark">
     <div class="container">
         <header class="section__header">

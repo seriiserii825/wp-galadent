@@ -40,9 +40,37 @@ function crb_attach_theme_options()
 		->set_page_parent($basic_options_container)// reference to a top level container
 		->add_fields( array(
 			Field::make('text', 'crb_phone_translate_ro', __('Telefon'))
-				->set_width(30),
+				->set_width(50),
 			Field::make('text', 'crb_phone_translate_ru', __('Телефон'))
-				->set_width(30),
+				->set_width(50),
+
+			Field::make('text', 'crb_read_more_ro', __('Read more ro'))
+			     ->set_width(50),
+			Field::make('text', 'crb_read_more_ru', __('Read more ru'))
+			     ->set_width(50),
+		));
+
+	// Add second options page under 'Basic Options'
+	Container::make('theme_options', 'Testimonials')
+		->set_page_parent($basic_options_container)// reference to a top level container
+		->add_fields( array(
+			Field::make('complex', 'crb_testimonials_fields', __('Fields'))
+				->add_fields(array(
+					Field::make('image', 'image', 'Image')
+					->set_value_type('url'),
+
+					Field::make('text', 'title_ro', __('Title ro'))
+						->set_width(50),
+					Field::make('text', 'title_ru', __('Title ru'))
+						->set_width(50),
+
+					Field::make('textarea', 'text_ro', __('Text ro'))
+						->set_width(50),
+					Field::make('textarea', 'text_ru', __('Text ru'))
+						->set_width(50),
+
+				))
+				->set_layout('tabbed-horizontal')
 		));
 
 }
