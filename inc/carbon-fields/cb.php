@@ -48,6 +48,11 @@ function crb_attach_theme_options()
 			     ->set_width(50),
 			Field::make('text', 'crb_read_more_ru', __('Read more ru'))
 			     ->set_width(50),
+
+			Field::make('text', 'crb_services_block_subtitle_ro', __('Read more ro'))
+			     ->set_width(50),
+			Field::make('text', 'crb_services_block_subtitle_ru', __('Read more ru'))
+			     ->set_width(50),
 		));
 
 	// Add second options page under 'Basic Options'
