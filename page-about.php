@@ -28,7 +28,7 @@ get_header();
             </div>
             <a class="btn">Read more</a>
         </div>
-        <img class="single-post__img" src="assets/i/single-post-image.jpg">
+        <img class="single-post__img" src="<?php echo get_template_directory_uri(); ?>/assets/i/single-post-image.jpg">
     </div>
 </section>
 <section class="single-post single-post--reverse section">
@@ -47,7 +47,7 @@ get_header();
             </div>
             <a class="btn">Read more</a>
         </div>
-        <img class="single-post__img" src="assets/i/single-post-image.jpg">
+        <img class="single-post__img" src="<?php echo get_template_directory_uri(); ?>/assets/i/single-post-image.jpg">
     </div>
 </section>
 <div class="container">
@@ -68,28 +68,28 @@ get_header();
                 <h2 class="section__title">Exercitation ullamco</h2>
             </header>
             <ul class="list">
-                <li class="list__item"><img src="assets/i/check-icon.svg" alt="">
+                <li class="list__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/check-icon.svg" alt="">
                     <span>Behavioral health</span>
                 </li>
-                <li class="list__item"><img src="assets/i/check-icon.svg" alt="">
+                <li class="list__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/check-icon.svg" alt="">
                     <span>Behavioral health</span>
                 </li>
-                <li class="list__item"><img src="assets/i/check-icon.svg" alt="">
+                <li class="list__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/check-icon.svg" alt="">
                     <span>Behavioral health</span>
                 </li>
-                <li class="list__item"><img src="assets/i/check-icon.svg" alt="">
+                <li class="list__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/check-icon.svg" alt="">
                     <span>Behavioral health</span>
                 </li>
-                <li class="list__item"><img src="assets/i/check-icon.svg" alt="">
+                <li class="list__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/check-icon.svg" alt="">
                     <span>Behavioral health</span>
                 </li>
-                <li class="list__item"><img src="assets/i/check-icon.svg" alt="">
+                <li class="list__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/check-icon.svg" alt="">
                     <span>Behavioral health</span>
                 </li>
-                <li class="list__item"><img src="assets/i/check-icon.svg" alt="">
+                <li class="list__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/check-icon.svg" alt="">
                     <span>Behavioral health</span>
                 </li>
-                <li class="list__item"><img src="assets/i/check-icon.svg" alt="">
+                <li class="list__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/check-icon.svg" alt="">
                     <span>Behavioral health</span>
                 </li>
             </ul>

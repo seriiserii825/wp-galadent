@@ -1361,7 +1361,9 @@ table td {
 .simple-list__item {
   margin-bottom: 20px;
 }
-
+.simple-list a {
+  text-decoration: none;
+}
 .simple-list b {
   display: block;
   margin-bottom: 10px;
