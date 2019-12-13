@@ -10,7 +10,7 @@ use Carbon_Fields\Field;
 add_action('carbon_fields_register_fields', 'crb_attach_theme_options');
 function crb_attach_theme_options()
 {
-	$basic_options_container = Container::make('theme_options', __('Carbon Fields'))
+	$basic_options_container = Container::make('theme_options', __('Carbon Fields', 'bs-galadent'))
 		->add_tab(__('Contacts'), array(
 			Field::make('text', 'crb_address_ro', __('address ro'))
 				->set_width(50),
@@ -18,10 +18,12 @@ function crb_attach_theme_options()
 				->set_width(50),
 
 			Field::make('text', 'crb_phone', __('Telefon')),
+			Field::make('text', 'crb_phone_2', __('Telefon 2')),
+			Field::make('text', 'crb_phone_3', __('Telefon 3')),
 			Field::make('text', 'crb_mail', __('Mail')),
 			Field::make('text', 'crb_facebook', __('Facebook')),
 			Field::make('text', 'crb_twitter', __('Twitter')),
-			Field::make('image', 'crb_logo_image', __('Logo image'))
+			Field::make('image', 'crb_logo_image', __('Logo image'), 'bs-galadent')
 			->set_value_type('url')
 		));
 

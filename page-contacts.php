@@ -19,37 +19,43 @@ get_header();
         <div class="contacts-page__container">
             <div class="contacts-page__item wow fadeInLeft">
                 <header class="section__header">
-                    <h2 class="section__title">Get In Touch</h2>
+                    <h2 class="section__title">Contacteaza-ne</h2>
                 </header>
                 <div class="contacts-form">
-                    <input type="text" name="name" placeholder="Name">
-                    <div class="contacts-form__group">
-                        <input type="email" name="name" placeholder="Email">
-                        <input type="number" name="name" placeholder="Phone">
-                    </div>
-                    <textarea placeholder="Message"></textarea>
-                    <input class="btn" type="submit" value="Send Message">
+                    <?php if(get_lang() == '_ru'): ?>
+	                    <?php echo do_shortcode('[contact-form-7 id="80" title="Form ru"]'); ?>
+                    <?php else: ?>
+	                    <?php echo do_shortcode('[contact-form-7 id="94" title="Form ro"]'); ?>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="contacts-page__item wow fadeInRight">
                 <header class="section__header">
-                    <h2 class="section__title">incididunt ut labore</h2>
+                    <h2 class="section__title"><?php echo esc_html__( 'Adresa noastra', 'bs-galadent' ); ?></h2>
                 </header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
+                <p><?php echo esc_html__( 'Gasiți citeva minute pentru a ne contacta.', 'bs-galadent' ); ?></p>
                 <ul class="contacts-page__list">
-                    <li><img src="assets/i/map.svg" alt="">
-                        <span>Chișinău, Bulevardul Constantin Negruzzi 102</span>
+                    <li>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/i/map.svg" alt="">
+                        <span><?php echo carbon_get_theme_option('crb_address'.get_lang()); ?></span>
                     </li>
-                    <li><img src="assets/i/phone-fix.svg" alt="">
-                        <span><a href="tel:(+373) 79 580 458">(+373) 79 580 458</a>, <a href="tel:(+373) 79 980 458">(+373) 79 980 458</a></span>
+                    <li>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/i/phone-fix.svg" alt="">
+                        <div>
+                            <a href="tel:<?php echo clear_phone(carbon_get_theme_option('crb_phone')); ?>"><?php echo carbon_get_theme_option('crb_phone'); ?></a>
+                            <a href="tel:<?php echo clear_phone(carbon_get_theme_option('crb_phone_2')); ?>"><?php echo carbon_get_theme_option('crb_phone_2'); ?></a>
+                            <a href="tel:<?php echo clear_phone(carbon_get_theme_option('crb_phone_3')); ?>"><?php echo carbon_get_theme_option('crb_phone_3'); ?></a>
+                        </div>
                     </li>
-                    <li><img src="assets/i/mail-blue.svg" alt="">
-                        <span><a href="mailto:clinic_dental@gmail.com">clinic_dental@gmail.com</a>,<br> <a
-                                    href="mailto:support_dental@gmail.com">support_dental@gmail.com</a></span>
+                    <li>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/i/mail-blue.svg" alt="">
+                        <a href="mailto:<?php echo carbon_get_theme_option('crb_mail'); ?>"><?php echo carbon_get_theme_option('crb_mail'); ?></a>
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.8747374477525!2d28.819407315462893!3d47.02306373609824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97dcd7165caed%3A0x1d7c3c4d480b3c1a!2zU3RyYWRhIE1hcmlhIENlYm90YXJpIDExLCBDaGnImWluxIN1LCDQnNC-0LvQtNCw0LLQuNGP!5e0!3m2!1sru!2s!4v1576226791904!5m2!1sru!2s" width="100%" height="650" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
         </div>
     </div>
 </div>

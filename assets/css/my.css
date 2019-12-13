@@ -1265,6 +1265,7 @@ table td {
 .contacts-page__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 60px;
 }
 
 @media screen and (max-width: 992px) {
@@ -1296,24 +1297,21 @@ table td {
 
 .contacts-page__list li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px 0;
 }
-
-.contacts-page__list img {
-  margin-right: 20px;
-}
-
-.contacts-page__list span,
-.contacts-page__list a {
+.contacts-page__list li a {
+  display: block;
+  margin-bottom: 6px;
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
   color: #35414B;
+  transition: all .3s;
 }
 
-.contacts-page__list a {
-  transition: all .3s;
+.contacts-page__list img {
+  margin-right: 20px;
 }
 
 .contacts-page__list a:hover {
@@ -1336,7 +1334,8 @@ table td {
   border-bottom: 1px solid #eeeeee;
 }
 
-.contacts-form input[type="text"] {
+.contacts-form input[type="email"],
+.contacts-form input[type="tel"] {
   width: 100%;
 }
 
@@ -1478,4 +1477,6 @@ table td {
 .page-404__subtitle {
   margin-bottom: 20px;
 }
-
+a.custom-logo-link {
+  width: 140px;
+}

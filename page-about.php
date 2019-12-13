@@ -26,7 +26,7 @@ get_header();
                 <p>Promotes unrealistic expectations of what a healthy smile looks like and it is clearly having a
                     negative effect</p>
             </div>
-            <a class="btn">Read more</a>
+            <a class="btn"><?php echo esc_html__( 'Read more', 'bs-galadent' ); ?></a>
         </div>
         <img class="single-post__img" src="<?php echo get_template_directory_uri(); ?>/assets/i/single-post-image.jpg">
     </div>

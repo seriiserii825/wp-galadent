@@ -44,10 +44,9 @@
                     <div class="sandwitch__line sandwitch__line--bottom"></div>
                 </div>
             </div>
-            <a class="logo" href="<?php echo home_url(); ?>">
-                <img class="logo__img" src="<?php echo carbon_get_theme_option('crb_logo_image'); ?>">
-                <span class="logo__text"><?php echo bloginfo('name'); ?></span>
-            </a>
+            <div class="logo">
+                <?php the_custom_logo(); ?>
+            </div>
 			<?php wp_nav_menu([
 				'theme_location' => '',
 				'menu' => '',

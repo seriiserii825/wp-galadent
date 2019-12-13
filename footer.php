@@ -42,11 +42,11 @@
             <h2 class="section__title"><?php echo carbon_get_theme_option( 'crb_form_btn' . get_lang() ); ?></h2>
         </header>
         <div class="contacts-form">
-            <?php if(get_lang() == '_ro'): ?>
-	            <?php echo do_shortcode('[contact-form-7 id="81" title="Form ro"]'); ?>
-            <?php else: ?>
-	            <?php echo do_shortcode( '[contact-form-7 id="80" title="Form ru"]' ); ?>
-            <?php endif; ?>
+	        <?php if(get_lang() == '_ru'): ?>
+		        <?php echo do_shortcode('[contact-form-7 id="80" title="Form ru"]'); ?>
+	        <?php else: ?>
+		        <?php echo do_shortcode('[contact-form-7 id="94" title="Form ro"]'); ?>
+	        <?php endif; ?>
         </div>
     </div>
 </div>

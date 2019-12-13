@@ -60,7 +60,7 @@ get_header();
             </div>
             <div class="services-single__item wow fadeIn">
                 <header class="section__header">
-                    <h2 class="section__title">Our Specialist</h2>
+                    <h2 class="section__title"><?php echo esc_html_e( 'Our specialists', 'bs-galadent' ); ?></h2>
                 </header>
                 <div class="blocks__content blocks__content-4">
 					<?php $specialist = new WP_Query( [
