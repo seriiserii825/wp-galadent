@@ -1128,10 +1128,12 @@ p {
 }
 
 .about-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-  padding-bottom: 80px;
+  padding: 60px 0;
+}
+.about-content p {
+  margin-bottom: 30px;
+  max-width: 800px;
+  line-height: 1.8;
 }
 
 @media screen and (max-width: 992px) {
@@ -1479,4 +1481,7 @@ table td {
 }
 a.custom-logo-link {
   width: 140px;
+}
+.page-about p{
+  margin-bottom: 30px;
 }
