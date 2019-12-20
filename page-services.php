@@ -21,7 +21,8 @@ get_header();
         <div class="blocks__content">
 			<?php $services = new WP_Query([
 				'category_name' => 'services',
-				'posts_per_page' => -1
+				'posts_per_page' => -1,
+                'order' => 'ASC'
 			]); ?>
 			<?php if($services->have_posts()): ?>
 				<?php while($services->have_posts()): ?>

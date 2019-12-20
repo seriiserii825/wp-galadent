@@ -30,11 +30,16 @@ function crb_attach_theme_options()
 	// Add second options page under 'Basic Options'
 	Container::make('theme_options', 'Blocks')
 		->set_page_parent($basic_options_container)// reference to a top level container
-		->add_tab(__('Navigation'), array(
-			Field::make('text', 'crb_navigation_title_ro', __('crb_navigation_title_ro'))
-				->set_width(30),
-			Field::make('text', 'crb_navigation_title_ru', __('crb_navigation_title_ru'))
-				->set_width(30),
+		->add_tab(__('Promotions'), array(
+			Field::make('text', 'crb_promotions_title_ro', __('crb_promotions_title_ro'))
+				->set_width(50),
+			Field::make('text', 'crb_promotions_title_ru', __('crb_promotions_title_ru'))
+				->set_width(50),
+
+			Field::make('rich_text', 'crb_promotions_text_ro', __('crb_promotions_text_ro'))
+			     ->set_width(50),
+			Field::make('rich_text', 'crb_promotions_text_ru', __('crb_promotions_text_ru'))
+			     ->set_width(50),
 		));
 
 	// Add second options page under 'Basic Options'

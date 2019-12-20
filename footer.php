@@ -13,24 +13,32 @@
                    href="#"><?php echo carbon_get_theme_option( 'crb_form_btn' . get_lang() ); ?></a>
             </div>
         </div>
-		<?php wp_nav_menu( [
-			'theme_location'  => '',
-			'menu'            => '',
-			'container'       => '',
-			'container_class' => '',
-			'container_id'    => '',
-			'menu_class'      => 'main-footer__menu',
-			'menu_id'         => '',
-			'echo'            => true,
-			'fallback_cb'     => 'wp_page_menu',
-			'before'          => '',
-			'after'           => '',
-			'link_before'     => '',
-			'link_after'      => '',
-			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-			'depth'           => 0,
-			'walker'          => '',
-		] ); ?>
+        <div class="footer-bottom">
+            <div class="promotions">
+                <h2 class="promotions__title"><?php echo carbon_get_theme_option( 'crb_promotions_title'.get_lang() ); ?></h2>
+                <div class="promotions__text">
+					<?php echo apply_filters( 'the_content', carbon_get_theme_option( 'crb_promotions_text' . get_lang() ) ); ?>
+                </div>
+            </div>
+			<?php wp_nav_menu( [
+				'theme_location'  => '',
+				'menu'            => '',
+				'container'       => '',
+				'container_class' => '',
+				'container_id'    => '',
+				'menu_class'      => 'main-footer__menu',
+				'menu_id'         => '',
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'depth'           => 0,
+				'walker'          => '',
+			] ); ?>
+        </div>
     </div>
 </footer>
 <div class="copyright"><?php echo carbon_get_theme_option( 'crb_copyright' . get_lang() ); ?></div>
@@ -42,11 +50,11 @@
             <h2 class="section__title"><?php echo carbon_get_theme_option( 'crb_form_btn' . get_lang() ); ?></h2>
         </header>
         <div class="contacts-form">
-	        <?php if(get_lang() == '_ru'): ?>
-		        <?php echo do_shortcode('[contact-form-7 id="80" title="Form ru"]'); ?>
-	        <?php else: ?>
-		        <?php echo do_shortcode('[contact-form-7 id="94" title="Form ro"]'); ?>
-	        <?php endif; ?>
+			<?php if ( get_lang() == '_ru' ): ?>
+				<?php echo do_shortcode( '[contact-form-7 id="80" title="Form ru"]' ); ?>
+			<?php else: ?>
+				<?php echo do_shortcode( '[contact-form-7 id="94" title="Form ro"]' ); ?>
+			<?php endif; ?>
         </div>
     </div>
 </div>

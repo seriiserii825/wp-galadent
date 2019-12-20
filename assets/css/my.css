@@ -1012,14 +1012,16 @@ p {
 
 .main-footer {
   margin-top: 70px;
-  padding-top: 80px;
+  padding-top: 90px;
+  padding-bottom: 40px;
   color: white;
   background: #35414B;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 992px) {
   .main-footer {
-    padding-top: 160px;
+    margin-top: 0;
+    padding-top: 50px;
   }
 }
 
@@ -1032,10 +1034,8 @@ p {
   color: white;
 }
 
-.main-footer__menu {
-  display: flex;
-  justify-content: center;
-  padding: 80px 0;
+.main-footer__menu li {
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 600px) {
@@ -1060,6 +1060,40 @@ p {
 
 .main-footer__menu a:hover {
   color: #3AB3DF;
+}
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+@media screen and (max-width: 992px) {
+	.footer-bottom {
+    display: table;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+}
+.promotions {
+  flex: 0 0 400px;
+  margin-right: 260px;
+  padding: 20px;
+  background: linear-gradient(45deg, #317e9a, #1a5267);
+  border-radius: 9px;
+  box-shadow: 0 6px 12px rgba(20, 46, 62, 0.4);
+}
+@media screen and (max-width: 992px) {
+	.promotions {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+h2.promotions__title {
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.promotions a {
+  text-decoration: underline;
 }
 
 .modal-block {
@@ -1091,14 +1125,15 @@ p {
 
 .modal-block-wrap {
   position: absolute;
-  top: -152px;
+  top: -190px;
   left: 0;
   width: 100%;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 992px) {
   .modal-block-wrap {
-    top: -260px;
+    position: static;
+    margin-bottom: 40px;
   }
 }
 
@@ -1453,7 +1488,7 @@ table td {
 }
 
 .page-404 {
-  padding: 200px 0;
+  padding: 100px 0;
   text-align: center;
 }
 
@@ -1485,3 +1520,10 @@ a.custom-logo-link {
 .page-about p{
   margin-bottom: 30px;
 }
+@media screen and (max-width: 992px) {
+  .main-footer__menu {
+    display: table;
+    margin: 0 auto;
+  }
+}
+
